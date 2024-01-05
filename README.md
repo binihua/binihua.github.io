@@ -31,6 +31,9 @@
             width: 100%;
             margin: 10px auto;
         }
+        header {
+            display: : none;
+        }
       	body {
             font-family: 'Arial', sans-serif;
             text-align: center;
