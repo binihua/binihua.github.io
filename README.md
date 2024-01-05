@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1;" name="viewport" />
@@ -8,9 +9,6 @@
             margin: 0;
             padding: 0;
             list-style: none;
-        }
-        body {
-            background-color: #eee;
         }
         h1 {
             font-size: 16px;
@@ -33,12 +31,155 @@
             width: 100%;
             margin: 10px auto;
         }
+      	body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #fceabb;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+        h1 {
+            color: #ff6f61;
+        }
+        .cake {
+            width: 300px;
+            margin: 20px auto;
+            animation: shakeCake 0.5s ease-in-out infinite alternate;
+        }
+        @keyframes shakeCake {
+            0% {
+                transform: rotateZ(-2deg);
+            }
+            100% {
+                transform: rotateZ(2deg);
+            }
+        }
+        .candles {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .candle {
+            background-color: #f7dc6f;
+            width: 10px;
+            height: 50px;
+            border-radius: 50% 50% 20% 20%;
+            position: relative;
+        }
+        .flame {
+            width: 20px;
+            height: 20px;
+            background-color: #ff3030;
+            position: absolute;
+            top: -25px;
+            border-radius: 50%;
+            animation: candleFlame 1s infinite alternate-reverse ease-in-out;
+        }
+        @keyframes candleFlame {
+            0% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(-15px);
+            }
+        }
+        .birthday-message {
+            color: #333;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .flowers {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: -1;
+        }
+        .flower {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 50% 50%, #ff89fb, #f06cfd);
+            animation: bloom 5s infinite linear alternate;
+        }
+        .flower:nth-child(1) {
+            top: -100px;
+            left: 20%;
+            animation-delay: 0s;
+        }
+        .flower:nth-child(2) {
+            top: -100px;
+            left: 40%;
+            animation-delay: 1s;
+        }
+        .flower:nth-child(3) {
+            top: -100px;
+            left: 60%;
+            animation-delay: 2s;
+        }
+        .flower:nth-child(4) {
+            top: -100px;
+            left: 80%;
+            animation-delay: 3s;
+        }
+        @keyframes bloom {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-100px) scale(1.5);
+            }
+            100% {
+                transform: translateY(-200px) scale(1);
+            }
+        }
     </style>
 </head>
+
 <body>
 
 <div id="timeArea"><h1 id="time"></h1></div>
 <div id="timeAreaLL"><h1 id="timeLL"></h1></div>
+
+<div class="card">
+        <img src="https://up.enterdesk.com/edpic_source/24/81/15/24811572ef5ff4863e750a717fbb7fee.jpg" alt="生日蛋糕" class="cake">
+        <h1>生日快乐！🎉🎂</h1>
+        <div class="candles">
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+        </div>
+        <div class="birthday-message">
+            <p>祝你生日快乐！愿这一天充满快乐和美好的回忆。</p>
+            <p>希望你的新一年充满幸福、健康和成功。</p>
+        </div>
+        <div class="flowers">
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+        <div class="flower"></div>
+    </div>
+    </div>
 
 <script type="text/javascript">
     window.onload = function() {
@@ -50,24 +191,24 @@
             var delTime = now.getTime() - meetYou.getTime();
             //计算出相差天数
             var days=Math.floor(delTime/(24*3600*1000));
-
+    
             //计算出小时数
             var leave1=delTime%(24*3600*1000);    //计算天数后剩余的毫秒数
             var hours=Math.floor(leave1/(3600*1000));
             //计算相差分钟数
             var leave2=leave1%(3600*1000);        //计算小时数后剩余的毫秒数
             var minutes=Math.floor(leave2/(60*1000));
-
+    
             //计算相差秒数
             var leave3=leave2%(60*1000);     //计算分钟数后剩余的毫秒数
             var seconds=Math.round(leave3/1000)%60;
-
+    
             var result = '与花花认识了 '+days+" 天 "+hours+" 小时 "+minutes+" 分钟 "+seconds+" 秒 啦！";
             var timeArea = document.getElementById('time');
             timeArea.innerHTML = result;
-
+    
         }, 1000);
-
+    
     }
 
 </script>
