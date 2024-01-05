@@ -160,7 +160,7 @@
 
 <div class="card">
     <img src="./images/bd.jpg" alt="生日蛋糕" class="cake">
-    <h1>生日快乐</h1>
+    <h1>花花宝宝 生日快乐</h1>
     <div class="candles">
         <div class="candle">
             <div class="flame"></div>
@@ -173,14 +173,14 @@
         </div>
     </div>
     <div class="birthday-message">
-        <p>祝花花生日快乐</p>
+        <p>《生日快乐》</p>
 
         <p>朱颜长似，</p>
         <p>头上花枝，</p>
         <p>岁岁年年，</p>
         <p>无惧无忧。</p>
 
-        <p>🎉🎂🎉🎂🎉🎂</p>
+        <p>🎉 🎂 🎉 🎂 🎉 🎂</p>
     </div>
     <div class="flowers">
         <div class="flower"></div>
